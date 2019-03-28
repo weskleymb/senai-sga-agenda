@@ -21,7 +21,7 @@ public class TestaFoneDAO {
 		
 		dao.salvar(f2);
 		
-		System.out.println(dao.buscarPorId(1L));
+		System.out.println(dao.buscarPorFone("98888-2222"));
 	
 	}
 
