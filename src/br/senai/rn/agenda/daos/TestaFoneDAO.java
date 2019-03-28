@@ -9,14 +9,19 @@ public class TestaFoneDAO {
 
 		FoneDAO dao = new FoneDAO();
 		
-		dao.salvar(new Fone("1111-1111", TipoFone.FIXO));
-		dao.salvar(new Fone("2222-4444", TipoFone.FIXO));
+		Fone f1 = new Fone();
+		f1.setFone("2222-3333");
+		f1.setTipoFone(TipoFone.FIXO);
 		
-		System.out.println(dao.buscarTodos());
+		dao.salvar(f1);
 		
-		dao.editar(new Fone("1111-1111", TipoFone.FIXO), new Fone("9999-1111", TipoFone.CELULAR));
-
-		System.out.println(dao.buscarTodos());
+		Fone f2 = new Fone();
+		f2.setFone("98888-2222");
+		f2.setTipoFone(TipoFone.CELULAR);
+		
+		dao.salvar(f2);
+		
+		System.out.println(dao.buscarPorId(1L));
 	
 	}
 

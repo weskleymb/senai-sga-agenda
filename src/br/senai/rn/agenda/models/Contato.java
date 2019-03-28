@@ -3,8 +3,11 @@ package br.senai.rn.agenda.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Contato {
+import br.senai.rn.agenda.daos.PersistDB;
 
+public class Contato implements PersistDB {
+
+	private Long id;
 	private String nome;
 	private List<Fone> fones;
 	private List<Email> emails;
@@ -14,7 +17,8 @@ public class Contato {
 		this.emails = new ArrayList<Email>();
 	}
 
-	public Contato(String nome, List<Fone> fones, List<Email> emails) {
+	public Contato(Long id, String nome, List<Fone> fones, List<Email> emails) {
+		this.id = id;
 		this.nome = nome;
 		this.fones = fones;
 		this.emails = emails;
@@ -36,12 +40,20 @@ public class Contato {
 		emails.remove(email);
 	}
 
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.trim().toUpperCase();
 	}
 
 	public List<Fone> getFones() {
@@ -64,7 +76,7 @@ public class Contato {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -77,17 +89,17 @@ public class Contato {
 		if (getClass() != obj.getClass())
 			return false;
 		Contato other = (Contato) obj;
-		if (nome == null) {
-			if (other.nome != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!nome.equals(other.nome))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Contato [nome=" + nome + ", fones=" + fones + ", emails=" + emails + "]";
+		return "Contato [id=" + id + ", nome=" + nome + ", fones=" + fones + ", emails=" + emails + "]";
 	}
 	
 }

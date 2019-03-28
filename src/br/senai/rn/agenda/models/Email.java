@@ -1,17 +1,30 @@
 package br.senai.rn.agenda.models;
 
+import br.senai.rn.agenda.daos.PersistDB;
 import br.senai.rn.agenda.models.enums.TipoEmail;
 
-public class Email {
+public class Email implements PersistDB {
 
+	private Long id;
 	private String email;
 	private TipoEmail tipoEmail;
 	
 	public Email() {}
 	
-	public Email(String email, TipoEmail tipoEmail) {
+	public Email(Long id, String email, TipoEmail tipoEmail) {
+		this.id = id;
 		this.email = email;
 		this.tipoEmail = tipoEmail;
+	}
+
+	@Override
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@Override
+	public Long getId() {
+		return id;
 	}
 
 	public String getEmail() {
@@ -19,7 +32,7 @@ public class Email {
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = email.trim().toLowerCase();
 	}
 
 	public TipoEmail getTipoEmail() {
@@ -34,7 +47,7 @@ public class Email {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -47,17 +60,17 @@ public class Email {
 		if (getClass() != obj.getClass())
 			return false;
 		Email other = (Email) obj;
-		if (email == null) {
-			if (other.email != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!email.equals(other.email))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Email [email=" + email + ", tipoEmail=" + tipoEmail + "]";
+		return "Email [id=" + id + ", email=" + email + ", tipoEmail=" + tipoEmail + "]";
 	}
 	
 }
