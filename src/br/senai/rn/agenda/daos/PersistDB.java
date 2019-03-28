@@ -1,8 +1,8 @@
-package br.senai.rn.agenda.dao;
+package br.senai.rn.agenda.daos;
 
 import java.util.List;
 
-import br.senai.rn.agenda.model.Fone;
+import br.senai.rn.agenda.models.Fone;
 
 public interface PersistDB {
 

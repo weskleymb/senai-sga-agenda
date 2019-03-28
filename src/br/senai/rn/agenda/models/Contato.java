@@ -1,4 +1,4 @@
-package br.senai.rn.agenda.model;
+package br.senai.rn.agenda.models;
 
 import java.util.ArrayList;
 import java.util.List;

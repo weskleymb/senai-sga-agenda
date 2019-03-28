@@ -1,7 +1,7 @@
-package br.senai.rn.agenda.dao;
+package br.senai.rn.agenda.daos;
 
-import br.senai.rn.agenda.model.Fone;
-import br.senai.rn.agenda.model.enums.TipoFone;
+import br.senai.rn.agenda.models.Fone;
+import br.senai.rn.agenda.models.enums.TipoFone;
 
 public class TestaFoneDAO {
 
