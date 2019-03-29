@@ -5,6 +5,8 @@ import br.senai.rn.agenda.enums.TipoFone;
 
 public class Fone implements PersistDB {
 
+	private static final long serialVersionUID = 1L;
+
 	private Long id;
 	private String fone;
 	private TipoFone tipoFone;

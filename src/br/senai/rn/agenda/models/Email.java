@@ -5,6 +5,8 @@ import br.senai.rn.agenda.enums.TipoEmail;
 
 public class Email implements PersistDB {
 
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String email;
 	private TipoEmail tipoEmail;

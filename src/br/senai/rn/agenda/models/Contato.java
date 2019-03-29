@@ -7,6 +7,8 @@ import br.senai.rn.agenda.daos.PersistDB;
 
 public class Contato implements PersistDB {
 
+	private static final long serialVersionUID = 1L;
+
 	private Long id;
 	private String nome;
 	private List<Fone> fones;
