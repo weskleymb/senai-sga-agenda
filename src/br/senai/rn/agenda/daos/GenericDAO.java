@@ -7,22 +7,12 @@ public abstract class GenericDAO<T extends PersistDB> {
 
 	private List<T> ts = new ArrayList<T>();
 	
-	@SuppressWarnings("deprecation")
-	public Boolean salvar(T t) {
-		if (!ts.contains(t)) {
-			t.setId(new Long(ts.size()));
-			ts.add(t);
-			return true;
-		}
-		return false;
+	public void salvar(T t) {
+		ts.add(t);
 	}
 	
-	public Boolean excluir(T t) {
-		if (ts.contains(t)) {
-			ts.remove(t);
-			return true;
-		}
-		return false;
+	public void excluir(T t) {
+		ts.remove(t);
 	}
 	
 	public T buscarPorId(Long id) {
