@@ -1,7 +1,7 @@
 package br.senai.rn.agenda.models;
 
 import br.senai.rn.agenda.daos.PersistDB;
-import br.senai.rn.agenda.models.enums.TipoEmail;
+import br.senai.rn.agenda.enums.TipoEmail;
 
 public class Email implements PersistDB {
 

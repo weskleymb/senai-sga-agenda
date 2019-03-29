@@ -1,4 +1,4 @@
-package br.senai.rn.agenda.models.enums;
+package br.senai.rn.agenda.enums;
 
 public enum TipoEmail {
 

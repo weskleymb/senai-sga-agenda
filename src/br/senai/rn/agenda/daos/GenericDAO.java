@@ -15,6 +15,10 @@ public abstract class GenericDAO<T extends PersistDB> {
 		ts.remove(t);
 	}
 	
+	public void editar(T tAtual, T tNovo) {
+		ts.set(tAtual.getId().intValue(), tNovo);
+	}
+	
 	public T buscarPorId(Long id) {
 		for (T t : ts) {
 			if (t.getId().equals(id)) {

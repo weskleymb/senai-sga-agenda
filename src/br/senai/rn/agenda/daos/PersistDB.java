@@ -1,6 +1,8 @@
 package br.senai.rn.agenda.daos;
 
-public interface PersistDB {
+import java.io.Serializable;
+
+public interface PersistDB extends Serializable {
 
 	void setId(Long id);
 	

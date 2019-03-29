@@ -1,7 +1,7 @@
 package br.senai.rn.agenda.models;
 
 import br.senai.rn.agenda.daos.PersistDB;
-import br.senai.rn.agenda.models.enums.TipoFone;
+import br.senai.rn.agenda.enums.TipoFone;
 
 public class Fone implements PersistDB {
 
